@@ -1,0 +1,32 @@
+/* Styling specific to the signup page */
+body {
+    background-color: #f8f8f8;
+    font-family: Arial, sans-serif;
+}
+
+.signup-container {
+    background-color: #f9e2e6;
+    width: 300px;
+    margin: 100px auto;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+input, button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+button {
+    background-color: #f2a1c7;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #f29ac7;
+}

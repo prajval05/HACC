@@ -1,0 +1,55 @@
+/* static/style_about.css */
+
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #fff8f0; /* Light beige background */
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    max-width: 2000px;
+    padding: 20px;
+    background-color: #ffebef; /* Light pink background for the container */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Section Headings */
+h1, h2, h3 {
+    color: #b25d69; /* Soft pinkish-brown for headers */
+    margin-bottom: 10px;
+}
+
+/* Sections */
+.about-section, .mission-section, .how-it-works-section, .closing-section {
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+/* Subsections */
+h3 {
+    margin-top: 10px;
+    font-size: 1.1em;
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+}

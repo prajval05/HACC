@@ -1,0 +1,120 @@
+/* General Page Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f8f8f8; /* Light gray background */
+}
+
+.container {
+    width: 90%;
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    background-color: #f8f8f8;
+}
+
+/* Result Box Styling */
+.result-box {
+    background-color: #f9e2e6; /* Light pink for box background */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    text-align: center;
+}
+
+/* Header */
+.result-box h1 {
+    font-size: 1.8rem;
+    color: rgb(32, 30, 30); /* Soft pink for headers */
+    margin-bottom: 20px;
+}
+
+/* Score and Severity Level */
+.result-box p {
+    font-size: 1.1rem;
+    color: #333333; /* Dark gray for main text */
+    margin: 5px 0;
+}
+
+/* Result Message Styling */
+.result-message {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #f2a1c7; /* Soft pink for positive tone */
+    margin: 20px 0;
+}
+
+/* Encouragement Message */
+.encouragement-message {
+    font-size: 1rem;
+    color: #666666; /* Medium gray for supportive message */
+    background-color: #f9e2e6; /* Same light pink for encouragement box */
+    padding: 15px;
+    border-radius: 5px;
+    margin: 20px 0;
+}
+
+/* AI-based Recommendations */
+.result-box h2 {
+    font-size: 1.3rem;
+    color: rgb(32, 30, 30); /* Soft pink for recommendation header */
+    margin-top: 20px;
+}
+
+.result-box ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.result-box ul li {
+    background-color: #f9e2e6; /* Light pink for list items */
+    color: #333333; /* Dark gray text */
+    margin: 8px 0;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+/* Button Styling */
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+button {
+    background-color: #f2a1c7; /* Soft pink for main action buttons */
+    color: #ffffff;
+    font-size: 1rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #f29ac7; /* Slightly darker pink on hover */
+}
+
+.book-button {
+    background-color: #f2a1c7; /* Soft pink for booking button */
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.book-button:hover {
+    background-color: #f29ac7; /* Darker pink on hover */
+}
