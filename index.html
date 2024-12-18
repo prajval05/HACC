@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GAD-7 AI Recommendations</title>
+    <script>
+        async function getRecommendation() {
+            const userInput = document.getElementById("emotionInput").value;
+
+            const response = await fetch('/recommend', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    "user_input": userInput
+                })
+            });
+
+            const data = await response.json();
+            if (data.recommended_strategies) {
+                let recommendationsList = '';
+                for (const [strategy, score] of Object.entries(data.recommended_strategies)) {
+                    recommendationsList += `<li>${strategy}: ${score.toFixed(2)}</li>`;
+                }
+                document.getElementById("recommendations").innerHTML = recommendationsList;
+            } else {
+                document.getElementById("recommendations").innerHTML = 'Error: ' + data.error;
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Get Coping Strategy Recommendations</h1>
+    <label for="emotionInput">Enter your emotional state (e.g., anxiety, depression, stress):</label>
+    <input type="text" id="emotionInput" placeholder="Enter emotion">
+    <button onclick="getRecommendation()">Get Recommendations</button>
+
+    <h2>Recommended Coping Strategies:</h2>
+    <ul id="recommendations"></ul>
+</body>
+</html>

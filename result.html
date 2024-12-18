@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Health Quiz Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="result-box">
+            <h1>Your Mental Health Result</h1>
+
+            <!-- Display Score and Severity Level -->
+            <p>Your Total Score: {{ score }}</p>
+            <p>Severity Level: {{ recommendation }}</p>
+
+            <!-- Dynamic Result Message -->
+            <div class="result-message" id="resultMessage">
+                <!-- Content will be updated with JavaScript -->
+                <p>Your mental health is important, and you're doing great!</p>
+            </div>
+
+            <!-- AI-based Recommended Coping Strategies -->
+            <h2>AI-based Recommended Coping Strategies</h2>
+            <ul>
+                {% for strategy, score in recommended_strategies.items() %}
+                    <li>{{ strategy }} (Recommended Score: {{ score }})</li>
+                {% endfor %}
+            </ul>
+
+            <!-- Encouragement Message -->
+            <div class="encouragement-message" id="encouragementMessage">
+                <p>It's always a good idea to check in with a professional to ensure you're on the right track. If you'd like to explore more or discuss further, booking an appointment might be a great next step!</p>
+            </div>
+
+            <!-- Button to Book an Appointment -->
+            <button class="book-button" onclick="window.location.href='https://www.reva.edu.in/events/manodhaara-reva-centre-for-wellbeing';">
+                Book an Appointment
+            </button>
+
+            <!-- Button to Retake GAD-7 Test -->
+            <div class="button-group">
+                <button onclick="window.location.href='{{ url_for('gad7') }}'">Retake Quiz !</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript to Dynamically Update Result Messages -->
+    <script>
+        // Assuming score determines mental health status (e.g., low score = good, high score = needs support)
+        var mentalHealthStatus = {{ score }} > 10 ? 1 : 0; // Customize threshold based on your criteria
+
+        if (mentalHealthStatus === 1) {
+            document.getElementById('resultMessage').innerHTML = "<p>Your mental health is important, and you're doing great!</p>";
+            document.getElementById('encouragementMessage').innerHTML = "<p>It's always a good idea to check in with a professional to ensure you're on the right track. If you'd like to explore more or discuss further, booking an appointment might be a great next step!</p>";
+        } else {
+            document.getElementById('resultMessage').innerHTML = "<p>Your mental health is important, and you're doing great!</p>";
+            document.getElementById('encouragementMessage').innerHTML = "<p>You're on the right track! Keep practicing self-care. If you'd like additional guidance, booking an appointment can help you continue your journey towards well-being.</p>";
+        }
+    </script>
+</body>
+</html>

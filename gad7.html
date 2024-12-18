@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GAD-7 Anxiety Screening Tool</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style7.css') }}">
+</head>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<body>
+  <div class="container">
+    <h1>Are You Ready To Assess Your Anxiety Levels?</h1>
+    <p>Take this brief screening to better understand your current mental health and identify areas where you may need support.</p>
+
+    <form action="/gad7" method="post">
+      {% for question in questions %}
+        <div class="question">
+          <label>{{ question }}</label>
+          <div class="options">
+            <label>
+              <input type="radio" name="q{{ loop.index }}" value="0" required>
+              <span>Not at all</span>
+            </label>
+            <label>
+              <input type="radio" name="q{{ loop.index }}" value="1">
+              <span>Several days</span>
+            </label>
+            <label>
+              <input type="radio" name="q{{ loop.index }}" value="2">
+              <span>More than half the days</span>
+            </label>
+            <label>
+              <input type="radio" name="q{{ loop.index }}" value="3">
+              <span>Nearly every day</span>
+            </label>
+          </div>
+        </div>
+      {% endfor %}
+
+      <!-- Add a text box for user feelings -->
+      <div class="question">
+        <label for="feelings">Express Your Feelings (optional):</label>
+        <textarea id="feelings" name="feelings" rows="4" placeholder="Hey there! Feel free to share whatever’s on your mind today"></textarea>
+        <p class="note">Your input will help us provide tailored support suggestions based on AI analysis.</p>
+      </div>
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</body>
+</html>
